@@ -87,10 +87,8 @@ class Graph(object):
                     line_info = line.split(",")
                     index = line_info[0]
                     square = line_info[1]
-                    if index not in self.graph:
-                        print("[Error] vertex %s in v.txt not found in e.txt" % index)
-                    else:
-                        self.graph_square[index] = square
+                    self.graph_square[index] = square
+
             self.vertices = list(self.graph.keys())
 
     def generate_random_points(self):

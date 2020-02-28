@@ -77,11 +77,12 @@ def astar_alg(graph, graph_square, start, end):
                 # check if a successor has a better f value
 
                 if successor not in frontier or f_node < frontier[successor]:
+                    steps += 1
                     frontier[successor] = f_node
                     predecessor[successor] = parentNode
                     g_dict[successor] = g_node
         closed_nodes[currentNode] = currentNode
-        steps += 1
+
         if currentNode == end:
             # get the path and cost
             cost = g_dict[currentNode]

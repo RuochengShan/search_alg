@@ -27,10 +27,11 @@ def dijkstra_alg(graph, start, end):
         # relax all the nodes that are connected to minNode
         for childNode, weight in graph[minNode].items():
             if weight + shortest_distance[minNode] < shortest_distance[childNode]:
+                steps += 1
                 shortest_distance[childNode] = weight + shortest_distance[minNode]
                 predecessor[childNode] = minNode
         visiting_nodes.pop(minNode)
-        steps += 1
+
 
     # get the path from start - end
     currentNode = str(end)
